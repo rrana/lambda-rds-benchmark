@@ -15,9 +15,11 @@ sam deploy --guided
 
 ### Testing the API
 
+```
 curl -X GET "https://your-api-id.execute-api.region.amazonaws.com/benchmark"
 
 
 for i in {1..10}; do
     curl -X GET "https://your-api-id.execute-api.region.amazonaws.com/benchmark" &
 done
+```
