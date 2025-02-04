@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  LambdaRDSBenchmark:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/handler.lambdaHandler
+      Runtime: nodejs18.x
+      MemorySize: 512
+      Timeout: 10
+      Environment:
+        Variables:
+          DB_HOST: "your-aurora-endpoint.rds.amazonaws.com"
+          DB_USER: "yourusername"
+          DB_PASSWORD: "yourpassword"
+          DB_NAME: "yourdatabase"
+          DB_PORT: "5432"
+      Policies:
+        - AWSLambdaBasicExecutionRole
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /benchmark
+            Method: GET

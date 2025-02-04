@@ -1,0 +1,33 @@
+.DS_Store
+node_modules/
+coverage/
+dist/
+.webpack
+build/
+docs/
+.env
+*.log
+packages/**/.serverless/
+*.tgz
+**/transcoder/output/
+**/transcoder/data/
+data
+build.tar.gz
+.scannerwork
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+# ignore re-exported api sub-folders
+packages/api/types
+packages/api/shared-utils
+packages/api/src/types
+packages/api/src/shared-utils
+
+# Temporary sls files
+*_warmup
+
+.idea
+*.iml
